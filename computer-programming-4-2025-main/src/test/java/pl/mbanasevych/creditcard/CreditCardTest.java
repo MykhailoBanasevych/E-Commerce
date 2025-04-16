@@ -1,6 +1,10 @@
 package pl.mbanasevych.creditcard;
 
 import org.junit.jupiter.api.Test;
+import pl.mbanasevych.creditcard.CreditAlreadyAssignedException;
+import pl.mbanasevych.creditcard.CreditBelowThresholdException;
+import pl.mbanasevych.creditcard.CreditCard;
+import pl.mbanasevych.creditcard.NotEnoughMoneyException;
 
 import java.math.BigDecimal;
 
