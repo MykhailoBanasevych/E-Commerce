@@ -1,6 +1,9 @@
 package pl.mbanasevych.ecommerce.catalog;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -8,7 +11,11 @@ import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class HashMapProductStorageTest {
+@SpringBootTest
+public class SqlProductStorageTest {
+
+    @Autowired
+    JdbcTemplate jdbcTemplate;
 
     public static final String EXAMPLE_PRODUCT_NAME = "example product";
 
@@ -38,8 +45,8 @@ public class HashMapProductStorageTest {
         assertThat(loaded.getId()).isEqualTo(product.getId());
     }
 
-    private HashMapProductStorage thereIsProductStorage() {
-        return new HashMapProductStorage();
+    private SqlProductStorage thereIsProductStorage() {
+        return new SqlProductStorage(jdbcTemplate);
     }
 
     private Product thereIsExampleProduct() {

@@ -1,9 +1,6 @@
 package pl.mbanasevych.ecommerce.catalog;
 
 import org.junit.jupiter.api.Test;
-import pl.mbanasevych.ecommerce.catalog.ArrayListProductStorage;
-import pl.mbanasevych.ecommerce.catalog.Product;
-import pl.mbanasevych.ecommerce.catalog.ProductCatalog;
 
 import java.math.BigDecimal;
 import java.util.List;
